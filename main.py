@@ -39,6 +39,7 @@ def filter_domains(input_csv, output_csv):
 
 if __name__ == "__main__":
     # Replace with the actual path to your input and output CSV files
+    # https://www.domcop.com/files/top/top10milliondomains.csv.zip
     input_csv_path = "top10milliondomains.csv.zip"
     with ZipFile(input_csv_path, 'r') as zip_ref:
         zip_ref.extractall()
