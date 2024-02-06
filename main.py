@@ -5,8 +5,6 @@ import whoisdomain as whois
 from zipfile import ZipFile
 from datetime import datetime, timedelta
 
-#12695
-
 
 def check_domain_expiry(domain):
     try:
@@ -21,7 +19,6 @@ def check_domain_expiry(domain):
 
         return expiration_date
 
-    # except AttributeError or whois.exceptions.WhoisPrivateRegistry or whois.exceptions.WhoisException or whois.exceptions.WhoisCommandTimeout or whois.exceptions.FailedParsingWhoisOutput or whois.exceptions.WhoisCommandFailed or whois.exceptions.WhoisQuotaExceeded or whois.exceptions.UnknownDateFormat or whois.exceptions.UnknownTld or whois.exceptions.WhoisPrivateRegistry:
     except:
         print(domain, " failed")
         return None
@@ -48,18 +45,8 @@ def filter_domains(input_csv, output_csv):
                     print("\n", domain, " expires soon!")
 
 
+# Download a file from a direct URL to the current working directory.
 def download_file(url, filename=None):
-    """
-    Download a file from a direct URL to the current working directory.
-
-    Parameters:
-        url (str): The direct URL link to the file.
-        filename (str, optional): The name to be used for the downloaded file. If not provided,
-                                  the function will extract the filename from the URL.
-
-    Returns:
-        str: The path to the downloaded file.
-    """
     # If filename is not provided, extract it from the URL
     if not filename:
         filename = url.split("/")[-1]
